@@ -56,9 +56,9 @@ export const botConfig = {
   applications: {
     // Default questions shown when someone fills out an application.
     defaultQuestions: [
-      { question: "What is your name?", required: true },
-      { question: "How old are you?", required: true },
-      { question: "Why do you want to join?", required: true },
+      { question: "Wie heißt du?", required: true },
+      { question: "Wie alt bist du?", required: true },
+      { question: "Warum möchtest du dem Server beitreten?", required: true },
     ],
 
     // Embed colors by application status.
@@ -136,7 +136,7 @@ export const botConfig = {
     },
     footer: {
       // Default footer text used in bot embeds.
-      text: "Titan Bot",
+      text: "Nordkirchen Bot",
       // Footer icon URL (null = no icon).
       icon: null,
     },
@@ -156,9 +156,9 @@ export const botConfig = {
   economy: {
     currency: {
       // Currency display name.
-      name: "coins",
+      name: "Münzen",
       // Plural display name.
-      namePlural: "coins",
+      namePlural: "Münzen",
       // Currency symbol shown in balances.
       symbol: "$",
     },
@@ -211,27 +211,27 @@ export const botConfig = {
       none: {
         emoji: "⚪",
         color: "#95A5A6",
-        label: "None",
+        label: "Keine",
       },
       low: {
         emoji: "🟢",
         color: "#2ECC71",
-        label: "Low",
+        label: "Niedrig",
       },
       medium: {
         emoji: "🟡",
         color: "#F1C40F",
-        label: "Medium",
+        label: "Mittel",
       },
       high: {
         emoji: "🔴",
         color: "#E74C3C",
-        label: "High",
+        label: "Hoch",
       },
       urgent: {
         emoji: "🚨",
         color: "#E91E63",
-        label: "Urgent",
+        label: "Dringend",
       },
     },
 
@@ -288,11 +288,9 @@ export const botConfig = {
   // VERIFICATION SETTINGS
   // =========================
   verification: {
-    // Message shown when posting the verification panel.
-    defaultMessage: "Click the button below to verify yourself and gain access to the server!",
-
-    // Text on the verification button.
-    defaultButtonText: "Verify",
+  defaultMessage: "Klicke auf den Button unten, um dich zu verifizieren und Zugriff auf den Server zu erhalten!",
+  defaultButtonText: "Verifizieren",
+},
 
     // Automatic verification behavior.
     autoVerify: {
@@ -319,9 +317,9 @@ export const botConfig = {
 
       // Human-readable descriptions for each criteria mode.
       criteria: {
-        account_age: "Account must be older than specified days",
-        server_size: "All users if server has less than 1000 members",
-        none: "All users immediately"
+        account_age: "Account muss älter als die angegebene Anzahl an Tagen sein",
+        server_size: "Alle Benutzer, wenn der Server weniger als 1000 Mitglieder hat",
+        none: "Alle Benutzer sofort"
       }
     },
 
@@ -359,11 +357,11 @@ export const botConfig = {
     // Welcome template posted when a user joins.
     // Placeholders: {user}, {server}, {memberCount}
     defaultWelcomeMessage:
-      "Welcome {user} to {server}! We now have {memberCount} members!",
+      "Willkommen {user} auf {server}! Wir haben jetzt {memberCount} Mitglieder!",
     // Goodbye template posted when a user leaves.
     // Placeholders: {user}, {memberCount}
     defaultGoodbyeMessage:
-      "{user} has left the server. We now have {memberCount} members.",
+      "{user} hat den Server verlassen. Wir haben jetzt {memberCount} Mitglieder.",
     // Channel ID for welcome messages.
     defaultWelcomeChannel: null,
     // Channel ID for goodbye messages.
@@ -391,15 +389,15 @@ export const botConfig = {
     },
     messages: {
       // Default response messages for counter actions.
-      created: "✅ Created counter **{name}**",
-      deleted: "🗑️ Deleted counter **{name}**",
-      updated: "🔄 Updated counter **{name}**",
+      created: "✅ Counter **{name}** erstellt",
+      deleted: "🗑️ Counter **{name}** gelöscht",
+      updated: "🔄 Counter **{name}** aktualisiert",
     },
     types: {
       // Built-in counter types and how each count is calculated.
       members: {
-        name: "👥 Members",
-        description: "Total members in the server",
+        name: "👥 Mitglieder",
+        description: "Gesamtanzahl der Bot-Konten auf dem Server",
         getCount: (guild) => guild.memberCount.toString(),
       },
       bots: {
@@ -409,8 +407,8 @@ export const botConfig = {
           guild.members.cache.filter((m) => m.user.bot).size.toString(),
       },
       members_only: {
-        name: "👤 Humans",
-        description: "Total human members (non-bots)",
+        name: "👤 Menschen",
+        description: "Gesamtanzahl menschlicher Mitglieder (keine Bots)",
         getCount: (guild) =>
           guild.members.cache.filter((m) => !m.user.bot).size.toString(),
       },
@@ -421,14 +419,14 @@ export const botConfig = {
   // GENERIC BOT MESSAGES
   // =========================
   messages: {
-    noPermission: "You do not have permission to use this command.",
-    cooldownActive: "Please wait {time} before using this command again.",
-    errorOccurred: "An error occurred while executing this command.",
-    missingPermissions:
-      "I am missing required permissions to perform this action.",
-    commandDisabled: "This command has been disabled.",
-    maintenanceMode: "The bot is currently in maintenance mode.",
-  },
+  noPermission: "Du hast keine Berechtigung, diesen Befehl zu verwenden.",
+  cooldownActive: "Bitte warte {time}, bevor du diesen Befehl erneut verwendest.",
+  errorOccurred: "Beim Ausführen dieses Befehls ist ein Fehler aufgetreten.",
+  missingPermissions:
+    "Mir fehlen die erforderlichen Berechtigungen, um diese Aktion auszuführen.",
+  commandDisabled: "Dieser Befehl wurde deaktiviert.",
+  maintenanceMode: "Der Bot befindet sich derzeit im Wartungsmodus.",
+},
 
   // =========================
   // FEATURE TOGGLES
